@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Carro } from 'src/app/entities/carro';
+import { Mecanico } from 'src/app/entities/mecanico';
 import { Servico } from 'src/app/entities/servico';
 import { ServicoService } from 'src/app/services/servico.service';
+import { MecanicoService } from 'src/app/services/mecanico.service';
+import { CarroService } from 'src/app/services/carro.service';
 
 @Component({
   selector: 'app-servico',
@@ -10,6 +14,9 @@ import { ServicoService } from 'src/app/services/servico.service';
 export class ServicoComponent implements OnInit {
 
   boolPostForm: boolean = false
+  carros: Carro[] = []
+  mecanicos: Mecanico[] = []
+
   servico: Servico = {
     id: 0,
     id_carro: 0,
@@ -19,10 +26,12 @@ export class ServicoComponent implements OnInit {
 
   servicos: Servico[] = []
 
-  constructor(private servicoService: ServicoService) { }
+  constructor(private servicoService: ServicoService,private mecanicoService: MecanicoService,private carroService: CarroService ) { }
 
   ngOnInit(): void {
     this.listar()
+    this.carroService.listar().subscribe(resp => this.carros = resp)
+    this.mecanicoService.listar().subscribe(resp => this.mecanicos = resp)
   }
 
   showPostForm(): void{
@@ -33,13 +42,12 @@ export class ServicoComponent implements OnInit {
     this.boolPostForm = false
   }
 
-  save(descricao: string, id_mecanico: string, id_carro: string): void {
-    const id_carron = Number(id_carro)
-    const id_mecanicon = Number(id_mecanico)
+  save(descricao: string, id_mecanico: number, id_carro: number): void {
+    
     this.servico = {
       id: 0,
-      id_carro: id_carron,
-      id_mecanico: id_mecanicon,
+      id_carro: id_carro,
+      id_mecanico: id_mecanico,
       descricao: descricao
     }
     this.servicoService.incluir(this.servico).subscribe(servico => {this.servicos.push(servico); this.listar()})

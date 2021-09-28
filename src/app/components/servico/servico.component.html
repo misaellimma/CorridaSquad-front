@@ -8,10 +8,27 @@
     <div *ngIf="boolPostForm">
         <label for="descricao">Descricao do servico: </label>
         <input class="form form-control" id="descricao" #descricao required><br>
-        <label for="id-mecanico">Id do mecanico: </label>
+        
+        <!--<label for="id-mecanico">Id do mecanico: </label>
         <input class="form form-control" id="id-mecanico" #idMecanico required=""><br>
         <label for="id-carro">Id do carro: </label>
-        <input class="form form-control" id="id-carro" #idCarro required=""><br>
+        <input class="form form-control" id="id-carro" #idCarro required=""><br>-->
+
+        <label class="form-label" for="ìd_mecanico">Id do Mecanico:</label>
+        <div class="form-group mb-3">
+            <select class="form-select" #idMecanico required> 
+                <option *ngFor="let mecanico of mecanicos" value="{{mecanico.id}}" name="id_mecanico">{{mecanico.nome}}</option>
+            </select>
+        </div>
+
+        <label class="form-label" for="ìd_carro">Id do carro:</label>
+        <div class="form-group mb-3">
+            <select class="form-select" #idCarro required> 
+                <option *ngFor="let carro of carros" value="{{carro.id}}" name="id_carro">{{carro.nome}}</option>
+            </select>
+        </div>
+
+
         <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
         <input type="submit" class="btn btn-success" (click)="save(descricao.value, idMecanico.value, idCarro.value); descricao.value=''; idMecanico.value=''; idCarro.value='';" value="Incluir ">
     </div>

@@ -11,3 +11,41 @@
         <button class="btn btn-success" (click)="alterar()">Salvar</button>
     </form>
 </div>
+
+
+<h1 class="py-3 text-center">Atualizar serviço</h1>
+
+<div class="container my-3">
+    <div class="card" style="width: 32rem; margin: auto; float: none;">
+        <div class="card-body register-form">
+            <form >
+                <div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="descricao">{{servico.descricao}}</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        name="descricao"
+                        [(ngModel)]="servico.descricao"
+                        placeholder="Ex. Marinho"
+                        />
+                    </div>
+                    <label class="form-label" for="id_mecanico">Selecione um mecânico:</label>
+                    <div class="form-group mb-3">
+                        <select name="id_mecanico" id="id_mecanico" class="form-select" [(ngModel)]="servico.id_mecanico" required> 
+                            <option *ngFor="let mecanico of mecanicos" value="{{mecanico.id}}" selected name="id_mecanico">{{mecanico.nome}}</option>
+                        </select>
+                    </div>  
+                    <label class="form-label" for="id_carro">Selecione um carro:</label>
+                    <div class="form-group mb-3">
+                        <select name="id_carro" id="id_carro" class="form-select" [(ngModel)]="servico.id_carro" required> 
+                            <option *ngFor="let carro of carros" value="{{carro.id}}" selected name="id_carro">{{carro.descricao}}</option>
+                        </select>
+                    </div>                   
+                    <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+                    <button class="btn btn-success mx-2" (click)="alterar()">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

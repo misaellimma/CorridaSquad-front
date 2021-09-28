@@ -1,7 +1,11 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Carro } from 'src/app/entities/carro';
+import { Mecanico } from 'src/app/entities/mecanico';
 import { Servico } from 'src/app/entities/servico';
+import { CarroService } from 'src/app/services/carro.service';
+import { MecanicoService } from 'src/app/services/mecanico.service';
 import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({
@@ -11,6 +15,12 @@ import { ServicoService } from 'src/app/services/servico.service';
 })
 export class ServicoAlterarComponent implements OnInit {
 
+  carros!: Carro[]
+  mecanicos!: Mecanico[]
+
+  mecanico!: Mecanico
+  carro!: Carro
+
   servico: Servico = {
     id: 0,
     descricao: '',
@@ -18,14 +28,23 @@ export class ServicoAlterarComponent implements OnInit {
     id_carro: 0
   }
 
-  constructor(private route: ActivatedRoute, private servicoService: ServicoService, private location: Location) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private servicoService: ServicoService, 
+    private location: Location,
+    private carroService: CarroService,
+    private mecanicoService: MecanicoService
+    ) { }
 
   ngOnInit(): void {
     this.loadServico()
+    this.carroService.listar().subscribe(resp => this.carros = resp)
+    this.mecanicoService.listar().subscribe(resp => this.mecanicos = resp)
   }
 
   loadServico(): void{
     this.servico.id = Number(this.route.snapshot.paramMap.get('id'))
+    this.servicoService.loadservico(this.servico.id).subscribe(resp => this.servico = resp)
   }
 
   alterar(): void {

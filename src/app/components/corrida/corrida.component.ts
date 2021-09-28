@@ -59,13 +59,7 @@ export class CorridaComponent implements OnInit {
 
   saveCorrida(): void {
     this.corridaService.create(this.corrida)
-      .subscribe(
-        response => {
-          console.log(response)
-        },
-        error => {
-          console.log(error)
-        })
+      .subscribe(resp => {this.getCorridas(); this.showHideForm()})
     this.getCorridas()
   }
 

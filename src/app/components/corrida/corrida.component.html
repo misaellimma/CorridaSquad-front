@@ -1,0 +1,37 @@
+<h1 class="py-3">Corrida</h1>
+
+<div class="container">
+    <div class="list-group-item">
+        <div class="row border p-1 m-2" *ngFor="let corrida of corridas">
+            <div class="col-10"> 
+                {{corrida.descricao}}
+            </div>
+            <div class="col-2"> 
+                <button class="btn btn-primary" routerLink="/corrida/alterar/{{corrida.id}}">Alterar</button>
+            </div>
+        </div>
+    </div>
+    
+   <button class="btn btn-success my-3" (click)="showHideForm()">Incluir nova Corrida</button>
+    <div  *ngIf="boolForm" class="card my-3">
+        <div class="card-body register-form">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+                <div class="form-group mb-3">
+                    <label >Descricao da corrida: </label>
+                    <input 
+                    class="form-control" 
+                    type="text"
+                    formControlName="descricao"
+                    name="descricao"
+                    [ngClass]="{'is-invalid': submitted && f.descricao.errors}"
+                    >
+                    <div *ngIf="submitted && f.descricao.errors" class="invalid-feedback">
+                        <div *ngIf="f.descricao.errors.required">descricao é requerido</div>
+                        <div *ngIf="f.descricao.errors.minlength">O nome precisa ter no minuno 3 caracteres</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

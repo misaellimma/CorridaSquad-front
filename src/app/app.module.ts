@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,12 +29,17 @@ import { EquipeService } from './services/equipe.service';
 import { PilotoService } from './services/piloto.service';
 import { MecanicoService } from './services/mecanico.service';
 import { ServicoService } from './services/servico.service';
+import { CorridaComponent } from './components/corrida/corrida.component';
+import { CorridaService } from './services/corrida.service';
+import { CorridaAlterarComponent } from './components/corrida-alterar/corrida-alterar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarroComponent,
     CarroAlterarComponent,
+    CorridaComponent,
+    CorridaAlterarComponent,
     PilotoComponent,
     PilotoAlterarComponent,
     ServicoComponent,
@@ -52,12 +57,14 @@ import { ServicoService } from './services/servico.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [
     AuxiliarService,
     CarroService,
     CarroCorridaCarroCorridaPilotoService,
+    
     EquipeService,
     PilotoService,
     MecanicoService,

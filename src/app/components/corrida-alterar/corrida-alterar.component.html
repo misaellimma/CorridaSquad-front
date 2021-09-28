@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Alterar a corrida do id: {{corrida.id}}</h2>
+    <form >
+        <label for="carro-descricao">Descricao da corrida: {{corrida.descricao}}</label>
+        <input name="descricao" class="form form-control" id="corrida-descricao" [(ngModel)]="corrida.descricao" value="{{corrida.descricao}}" required><br>
+        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+        <button class="btn btn-success mx-2" (click)="alterar()">Salvar</button>
+    </form>
+</div>

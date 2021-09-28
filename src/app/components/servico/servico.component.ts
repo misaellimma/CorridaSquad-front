@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { servico } from 'src/app/entities/servico';
+import { Servico } from 'src/app/entities/servico';
 import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { ServicoService } from 'src/app/services/servico.service';
 export class ServicoComponent implements OnInit {
 
   boolPostForm: boolean = false
-  servico: servico = {
+  servico: Servico = {
     id: 0,
     id_carro: 0,
     id_mecanico: 0,
     descricao: ''
   }
 
-  servicos: servico[] = []
+  servicos: Servico[] = []
 
   constructor(private servicoService: ServicoService) { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { auxiliar } from 'src/app/entities/auxiliar';
+import { Auxiliar } from 'src/app/entities/auxiliar';
 import { AuxiliarService } from 'src/app/services/auxiliar.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { AuxiliarService } from 'src/app/services/auxiliar.service';
 export class AuxiliarComponent implements OnInit {
 
   boolPostForm: boolean = false
-  auxiliar: auxiliar | undefined
-  auxiliars: auxiliar[] = []
+  auxiliar: Auxiliar | undefined
+  auxiliars: Auxiliar[] = []
 
   constructor(private auxiliarService: AuxiliarService) { }
 

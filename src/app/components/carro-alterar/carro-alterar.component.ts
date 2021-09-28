@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { carro } from 'src/app/entities/carro';
+import { Carro } from 'src/app/entities/carro';
 import { CarroService } from 'src/app/services/carro.service';
 import { Location } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class CarroAlterarComponent implements OnInit {
 
-  carro: carro = {
+  carro: Carro = {
     id: 0,
     descricao: '',
     numero: '',

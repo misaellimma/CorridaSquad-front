@@ -1,4 +1,4 @@
-export interface equipe {
+export interface Equipe {
     id: number,
     nome: string
 }

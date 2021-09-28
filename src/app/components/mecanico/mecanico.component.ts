@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { mecanico } from 'src/app/entities/mecanico';
+import { Mecanico } from 'src/app/entities/mecanico';
 import { MecanicoService } from 'src/app/services/mecanico.service';
 
 @Component({
@@ -11,13 +11,13 @@ export class MecanicoComponent implements OnInit {
 
   boolPostForm: boolean = false
 
-  mecanico: mecanico = {
+  mecanico: Mecanico = {
     id: 0,
     nome: '',
     id_equipe:0
   }
 
-  mecanicos: mecanico[] = []
+  mecanicos: Mecanico[] = []
 
   constructor(private mecanicoService: MecanicoService) { }
 

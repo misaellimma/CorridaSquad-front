@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { mecanico } from 'src/app/entities/mecanico';
+import { Mecanico } from 'src/app/entities/mecanico';
 import { MecanicoService } from 'src/app/services/mecanico.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { MecanicoService } from 'src/app/services/mecanico.service';
 })
 export class MecanicoAlterarComponent implements OnInit {
 
-  mecanico: mecanico = {
+  mecanico: Mecanico = {
     id: 0,
     nome: '',
     id_equipe: 0

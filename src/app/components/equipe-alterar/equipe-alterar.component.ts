@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { equipe } from 'src/app/entities/equipe';
+import { Equipe } from 'src/app/entities/equipe';
 import { EquipeService } from 'src/app/services/equipe.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { EquipeService } from 'src/app/services/equipe.service';
 })
 export class EquipeAlterarComponent implements OnInit {
 
-  equipe: equipe = {
+  equipe: Equipe = {
     id: 0,
     nome: ''
   }

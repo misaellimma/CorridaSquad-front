@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { piloto } from 'src/app/entities/piloto';
+import { Piloto } from 'src/app/entities/piloto';
 import { PilotoService } from 'src/app/services/piloto.service';
 
 @Component({
@@ -11,13 +11,13 @@ export class PilotoComponent implements OnInit {
 
   boolPostForm: boolean = false
 
-  piloto: piloto = {
+  piloto: Piloto = {
     id: 0,
     nome: '',
     id_equipe:0
   }
 
-  pilotos: piloto[] = []
+  pilotos: Piloto[] = []
 
   constructor(private pilotoService: PilotoService) { }
 

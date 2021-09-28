@@ -1,4 +1,4 @@
-export interface servico {
+export interface Servico {
     id: number,
     descricao: string,
     id_mecanico: number,

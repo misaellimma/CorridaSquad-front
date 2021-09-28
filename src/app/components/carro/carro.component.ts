@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { carro } from 'src/app/entities/carro';
+import { Carro } from 'src/app/entities/carro';
 import { CarroService } from 'src/app/services/carro.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { CarroService } from 'src/app/services/carro.service';
 export class CarroComponent implements OnInit {
 
   boolPostForm: boolean = false
-  carro: carro | undefined
-  carros: carro[] = []
+  carro: Carro | undefined
+  carros: Carro[] = []
 
   constructor(private carroService: CarroService) { }
 

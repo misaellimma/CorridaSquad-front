@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { auxiliar } from 'src/app/entities/auxiliar';
+import { Auxiliar } from 'src/app/entities/auxiliar';
 import { AuxiliarService } from 'src/app/services/auxiliar.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { AuxiliarService } from 'src/app/services/auxiliar.service';
 })
 export class AuxiliarAlterarComponent implements OnInit {
 
-  auxiliar: auxiliar = {
+  auxiliar: Auxiliar = {
     id: 0,
     nome: '',
     id_mecanico: 0,

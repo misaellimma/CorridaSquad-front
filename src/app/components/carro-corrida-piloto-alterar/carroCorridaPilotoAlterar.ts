@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { carroCorridaPiloto } from 'src/app/entities/carroCorridaPiloto';
+import { CarroCorridaPiloto } from 'src/app/entities/carroCorridaPiloto';
 import { CarroCorridaCarroCorridaPilotoService } from 'src/app/services/carro-corrida-piloto.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CarroCorridaCarroCorridaPilotoService } from 'src/app/services/carro-co
 })
 export class CarroCorridaPilotoAlterarComponent implements OnInit {
 
-  carroCorridaPiloto: carroCorridaPiloto = {
+  carroCorridaPiloto: CarroCorridaPiloto = {
     id: 0,
     id_carro: 0,
     id_corrida: 0,

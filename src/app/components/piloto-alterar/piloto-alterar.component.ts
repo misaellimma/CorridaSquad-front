@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Equipe } from 'src/app/entities/equipe';
 import { Piloto } from 'src/app/entities/piloto';
+import { EquipeService } from 'src/app/services/equipe.service';
 import { PilotoService } from 'src/app/services/piloto.service';
 
 @Component({
@@ -17,14 +19,26 @@ export class PilotoAlterarComponent implements OnInit {
     id_equipe: 0
   }
 
-  constructor(private route: ActivatedRoute, private pilotoService: PilotoService, private location: Location) { }
+  equipes: Equipe[] = []
+
+  constructor(private route: ActivatedRoute, private pilotoService: PilotoService, private location: Location, private equipeService: EquipeService) { }
 
   ngOnInit(): void {
     this.loadPiloto()
+
+    this.equipeService.listar()
+      .subscribe(
+        data => this.equipes = data
+      )
   }
 
   loadPiloto(): void{ 
-    this.piloto.id = Number(this.route.snapshot.paramMap.get('id'))
+    var id = Number(this.route.snapshot.paramMap.get('id'))
+
+    this.pilotoService.loadPiloto(id)
+      .subscribe(
+        data => this.piloto = data
+      )
   }
 
   alterar(): void {

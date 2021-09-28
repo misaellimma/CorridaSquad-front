@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { auxiliar } from 'src/app/entities/auxiliar';
+import { Auxiliar } from 'src/app/entities/auxiliar';
+import { Equipe } from 'src/app/entities/equipe';
+import { Mecanico } from 'src/app/entities/mecanico';
 import { AuxiliarService } from 'src/app/services/auxiliar.service';
+import { EquipeService } from 'src/app/services/equipe.service';
+import { MecanicoService } from 'src/app/services/mecanico.service';
 
 @Component({
   selector: 'app-auxiliar',
@@ -10,10 +14,12 @@ import { AuxiliarService } from 'src/app/services/auxiliar.service';
 export class AuxiliarComponent implements OnInit {
 
   boolPostForm: boolean = false
-  auxiliar: auxiliar | undefined
-  auxiliars: auxiliar[] = []
+  auxiliar: Auxiliar | undefined
+  auxiliars: Auxiliar[] = []
+  equipes: Equipe[] =[];
+  mecanicos: Mecanico[] =[]
 
-  constructor(private auxiliarService: AuxiliarService) { }
+  constructor(private auxiliarService: AuxiliarService, private equipeService : EquipeService, private mecanicoService : MecanicoService) { }
 
   ngOnInit(): void {
     this.listar()
@@ -42,6 +48,8 @@ export class AuxiliarComponent implements OnInit {
   listar(): void
   {
     this.auxiliarService.listar().subscribe(resp => this.auxiliars = resp)
+    this.equipeService.listar().subscribe(resp=> this.equipes = resp)
+    this.mecanicoService.listar().subscribe(resp=>this.mecanicos = resp)
   }
 
 }

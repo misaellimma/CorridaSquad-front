@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { carroCorridaPiloto } from 'src/app/entities/carroCorridaPiloto';
+import { CarroCorridaPiloto } from 'src/app/entities/carroCorridaPiloto';
 import { CarroCorridaCarroCorridaPilotoService } from 'src/app/services/carro-corrida-piloto.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { CarroCorridaCarroCorridaPilotoService } from 'src/app/services/carro-co
 export class CarroCorridaPilotoComponent implements OnInit {
 
   boolPostForm: boolean = false
-  carroCorridaPiloto: carroCorridaPiloto | undefined
-  carroCorridaPilotos: carroCorridaPiloto[] = []
+  carroCorridaPiloto: CarroCorridaPiloto | undefined
+  carroCorridaPilotos: CarroCorridaPiloto[] = []
 
   constructor(private carroCorridaPilotoService: CarroCorridaCarroCorridaPilotoService) { }
 

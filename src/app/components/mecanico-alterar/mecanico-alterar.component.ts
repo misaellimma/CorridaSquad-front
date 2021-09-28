@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { mecanico } from 'src/app/entities/mecanico';
+import { Equipe } from 'src/app/entities/equipe';
+import { Mecanico } from 'src/app/entities/mecanico';
+import { EquipeService } from 'src/app/services/equipe.service';
 import { MecanicoService } from 'src/app/services/mecanico.service';
 
 @Component({
@@ -11,23 +13,27 @@ import { MecanicoService } from 'src/app/services/mecanico.service';
 })
 export class MecanicoAlterarComponent implements OnInit {
 
-  mecanico: mecanico = {
+  mecanico: Mecanico = {
     id: 0,
     nome: '',
     id_equipe: 0
   }
   @Input() id?:Number
 
-  constructor(private route: ActivatedRoute, private mecanicoService: MecanicoService, private location: Location) { 
+  equipes: Equipe[] = []
+  equipe!: Equipe
+
+  constructor(private route: ActivatedRoute, private mecanicoService: MecanicoService, private location: Location, private equipeService: EquipeService) { 
   }
 
   ngOnInit(): void {
     this.loadMecanico()
+    this.equipeService.listar().subscribe(resp => this.equipes = resp)
   }
 
   loadMecanico(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.mecanico.id = id
+    this.mecanicoService.loadMecanico(id).subscribe(resp => this.mecanico = resp)
   }
 
   alterar(): void

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { auxiliar } from '../entities/auxiliar';
+import { Auxiliar } from '../entities/auxiliar';
 
 @Injectable({
   providedIn: 'root'
@@ -14,22 +14,22 @@ export class AuxiliarService {
 
   listar()
   {
-    return this.http.get<auxiliar[]>(`${this.url}/listar`)
+    return this.http.get<Auxiliar[]>(`${this.url}/listar`)
   }
 
-  incluir(novoAuxiliar: auxiliar): Observable<auxiliar>
+  incluir(novoAuxiliar: Auxiliar): Observable<Auxiliar>
   {
-    return this.http.post<auxiliar>(`${this.url}/incluir`, novoAuxiliar)
+    return this.http.post<Auxiliar>(`${this.url}/incluir`, novoAuxiliar)
   }
 
-  alterar(auxiliar: auxiliar): Observable<any>
+  alterar(auxiliar: Auxiliar): Observable<any>
   {
     return this.http.put<any>(`${this.url}/alterar`, auxiliar)
   }
 
-  loadAuxiliar(id: number): Observable<auxiliar>
+  loadAuxiliar(id: number): Observable<Auxiliar>
   {
     const getUrl = `${this.url}/${id}`
-    return this.http.get<auxiliar>(getUrl)
+    return this.http.get<Auxiliar>(getUrl)
   }
 }

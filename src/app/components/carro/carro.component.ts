@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { carro } from 'src/app/entities/carro';
-import { equipe } from 'src/app/entities/equipe';
+import { Carro } from 'src/app/entities/carro';
+import { Equipe } from 'src/app/entities/equipe';
 import { CarroService } from 'src/app/services/carro.service';
 import { EquipeService } from 'src/app/services/equipe.service';
 
@@ -13,10 +13,10 @@ import { EquipeService } from 'src/app/services/equipe.service';
 export class CarroComponent implements OnInit {
 
   boolPostForm: boolean = false
-  carro: carro | undefined
-  carros: carro[] = []
-  
-  equipes: equipe[] = []
+  carro: Carro | undefined
+  carros: Carro[] = []
+
+  equipes: Equipe[] = [] 
 
   constructor(private carroService: CarroService, private equipeService: EquipeService) { }
 

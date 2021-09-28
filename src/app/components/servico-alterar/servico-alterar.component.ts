@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { servico } from 'src/app/entities/servico';
+import { Servico } from 'src/app/entities/servico';
 import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ServicoService } from 'src/app/services/servico.service';
 })
 export class ServicoAlterarComponent implements OnInit {
 
-  servico: servico = {
+  servico: Servico = {
     id: 0,
     descricao: '',
     id_mecanico: 0,

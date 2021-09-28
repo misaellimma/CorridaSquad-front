@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { carro } from 'src/app/entities/carro';
+import { Carro } from 'src/app/entities/carro';
 import { CarroService } from 'src/app/services/carro.service';
 import { Location } from '@angular/common';
 import { EquipeService } from 'src/app/services/equipe.service';
-import { equipe } from 'src/app/entities/equipe';
+import { Equipe } from 'src/app/entities/equipe';
 
 @Component({
   selector: 'app-carro-alterar',
@@ -14,7 +14,7 @@ import { equipe } from 'src/app/entities/equipe';
 })
 export class CarroAlterarComponent implements OnInit {
 
-  carro: carro = {
+  carro: Carro = {
     id: 0,
     descricao: '',
     numero: '',
@@ -23,7 +23,7 @@ export class CarroAlterarComponent implements OnInit {
   }
   @Input() id?:Number
 
-  equipes: equipe[] = []
+  equipes: Equipe[] = []
 
   constructor(private route: ActivatedRoute, private carroService: CarroService, private location: Location, private equipeService: EquipeService) { 
   }

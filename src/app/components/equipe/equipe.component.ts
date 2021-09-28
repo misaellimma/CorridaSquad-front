@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { equipe } from 'src/app/entities/equipe';
+import { Equipe } from 'src/app/entities/equipe';
 import { EquipeService } from 'src/app/services/equipe.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { EquipeService } from 'src/app/services/equipe.service';
 export class EquipeComponent implements OnInit {
 
   boolPostForm: boolean = false
-  equipe: equipe | undefined
-  equipes: equipe[] = []
+  equipe: Equipe | undefined
+  equipes: Equipe[] = []
 
   constructor(private equipeService: EquipeService) { }
 

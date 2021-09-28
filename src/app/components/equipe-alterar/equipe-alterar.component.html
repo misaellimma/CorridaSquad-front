@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Alterar equipe: {{equipe.nome}}</h2>
+    <form >
+        <label for="nome">Nome da equipe: </label>
+        <input name="nome" class="form form-control" id="nome" [(ngModel)]="equipe.nome" required><br><br>
+        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+        <button class="btn btn-success" (click)="alterar()">Salvar</button>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let servico of servicos"> {{servico.descricao}} <button class="btn btn-primary" routerLink="/servico/alterar/{{servico.id}}">Alterar</button></li>
+    </ul>
+    <br>
+    <button class="btn btn-success" (click)="showPostForm()">Incluir novo servico</button>
+
+    <div *ngIf="boolPostForm">
+        <label for="descricao">Descricao do servico: </label>
+        <input class="form form-control" id="descricao" #descricao required><br>
+        <label for="id-mecanico">Id do mecanico: </label>
+        <input class="form form-control" id="id-mecanico" #idMecanico required=""><br>
+        <label for="id-carro">Id do carro: </label>
+        <input class="form form-control" id="id-carro" #idCarro required=""><br>
+        <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
+        <input type="submit" class="btn btn-success" (click)="save(descricao.value, idMecanico.value, idCarro.value); descricao.value=''; idMecanico.value=''; idCarro.value='';" value="Incluir ">
+    </div>
+</div>

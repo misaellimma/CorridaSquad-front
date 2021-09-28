@@ -1,0 +1,23 @@
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let carro of carros"> {{carro.descricao}} <button class="btn btn-primary" routerLink="/carro/alterar/{{carro.id}}">Alterar</button></li>
+    </ul>
+    <br>
+    <button class="btn btn-success" (click)="showPostForm()">Incluir novo carro</button>
+    
+    
+    <div *ngIf="boolPostForm">
+        <label for="carro-descricao">Descricao do carro: </label>
+        <input class="form form-control" id="carro-descricao" #carroDescricao required><br>
+        <label for="carro-placa">Numero do carro: </label>
+        <input class="form form-control" id="carro-numero" #carroPlaca required=""><br>
+        <label for="carro-equipe">Equipe do carro: </label>
+        <input class="form form-control" id="carro-equipe" #carroEquipe required><br><br>
+        <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
+        <input type="submit" class="btn btn-success" (click)="save(carroDescricao.value, carroPlaca.value, carroEquipe.value); carroDescricao.value=''; carroPlaca.value=''; carroEquipe.value='';" value="Incluir ">
+    </div>
+</div>
+
+
+

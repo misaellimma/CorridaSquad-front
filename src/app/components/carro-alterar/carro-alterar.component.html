@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Alterar carro do id: {{carro.id}}</h2>
+    <form >
+        <label for="carro-descricao">Descricao do carro: </label>
+        <input name="descricao" class="form form-control" id="carro-descricao" [(ngModel)]="carro.descricao" required><br>
+        <label for="carro-placa">Numero do carro: </label>
+        <input name="numeracao" class="form form-control" id="carro-placa" [(ngModel)]="carro.numero" required=""><br>
+        <label for="carro-equipe">Equipe do carro: </label>
+        <input name="id_equipe" class="form form-control" id="carro-equipe" [(ngModel)]="carro.id_equipe" required><br><br>
+        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+        <button class="btn btn-success" (click)="alterar()">Salvar</button>
+    </form>
+</div>

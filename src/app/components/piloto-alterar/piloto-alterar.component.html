@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Alterar piloto do id: {{piloto.id}}</h2>
+    <form >
+        <label for="piloto-nome">Nome do piloto: </label>
+        <input name="piloto-nome" class="form form-control" id="piloto-nome" [(ngModel)]="piloto.nome" required><br>
+        <label for="id-equipe">Id da equipe: </label>
+        <input name="id-equipe" class="form form-control" id="id-equipe" [(ngModel)]="piloto.id_equipe" required=""><br><br>
+        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+        <button class="btn btn-success" (click)="alterar()">Salvar</button>
+    </form>
+</div>

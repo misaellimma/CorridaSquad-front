@@ -1,0 +1,16 @@
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let equipe of equipes"> {{equipe.nome}} <button class="btn btn-primary" routerLink="/equipe/alterar/{{equipe.id}}">Alterar</button></li>
+    </ul>
+    <br>
+    <button class="btn btn-success" (click)="showPostForm()">Incluir novo equipe</button>
+    
+    
+    <div *ngIf="boolPostForm">
+        <label for="nome">Nome da equipe: </label>
+        <input class="form form-control" id="nome" #nome required><br>
+        <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
+        <input type="submit" class="btn btn-success" (click)="save(nome.value); nome.value='';" value="Incluir ">
+    </div>
+</div>

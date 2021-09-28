@@ -23,13 +23,14 @@ export class CarroComponent implements OnInit {
   ngOnInit(): void {
     this.listar()
 
-    this.equipeService.listar().subscribe(
-      data => {this.equipes = data},
-      error => console.log("Erro ao listar modalidade: ", error)
-    )
+    this.getEquipe()
   }
 
-
+  getEquipe(): void {
+    this.equipeService.listar().subscribe(
+      data => {this.equipes = data}
+    )
+  }
 
   showPostForm(){
     this.boolPostForm = true

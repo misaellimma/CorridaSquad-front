@@ -19,7 +19,6 @@ export class CarroAlterarComponent implements OnInit {
     descricao: '',
     numero: '',
     id_equipe: 0
-
   }
   @Input() id?:Number
 
@@ -32,13 +31,16 @@ export class CarroAlterarComponent implements OnInit {
     this.loadCarro()
 
     this.equipeService.listar().subscribe(
-      data => {this.equipes = data}
-    )
+      data => this.equipes = data
+      )
+      console.log(this.equipes)
   }
 
   loadCarro(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.carro.id = id
+    this.carroService.loadCarro(id).subscribe(
+      resp => this.carro = resp
+    )
   }
 
   alterar(): void

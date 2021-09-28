@@ -1,56 +1,52 @@
-
 <div class="container">
+    <h1>Lista de Carros</h1>
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let carro of carros"> {{carro.descricao}} <button class="btn btn-primary" routerLink="/carro/alterar/{{carro.id}}">Alterar</button></li>
+        <li class="list-group-item" *ngFor="let carro of carros">
+            {{carro.descricao}}
+            <button class="btn btn-primary" routerLink="/carro/alterar/{{carro.id}}">Alterar</button>
+        </li>
     </ul>
     <br>
     <button class="btn btn-success" (click)="showPostForm()">Incluir novo carro</button>
-    
-    
     <div class="container my-3" *ngIf="boolPostForm">
         <div class="card" style="width: 32rem; margin: auto; float: none;">
             <div class="card-body register-form">
-                <form >
+                <form>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="carro-descricao">Descricao do carro:</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="carro-descricao"
+                        placeholder="Ex. Marinho"
+                        #carroDescricao
+                        required
+                        />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="carro-placa">Numero do carro:</label>
+                        <input
+                        type="number"
+                        class="form-control"
+                        id="carro-numero"
+                        #carroPlaca
+                        placeholder="Ex. Marinho"
+                        required
+                        />
+                    </div>
                     <div>
+                        <label class="form-label" for="carro-equipe">Equipe do carro:</label>
                         <div class="form-group mb-3">
-                            <label class="form-label" for="carro-descricao">Descricao do carro:</label>
-                            <input
-                            type="text"
-                            class="form-control"
-                            id="carro-descricao"
-                            placeholder="Ex. Marinho"
-                            #carroDescricao
-                            required
-                            />
+                            <select class="form-select" #carroEquipe required> 
+                                <option selected> Selecione a equipe</option>
+                                <option *ngFor="let equipe of equipes" value="{{equipe.id}}" name="id_equipe">{{equipe.nome}}</option>
+                            </select>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="carro-placa">Numero do carro:</label>
-                            <input
-                            type="number"
-                            class="form-control"
-                            id="carro-numero"
-                            #carroPlaca
-                            placeholder="Ex. Marinho"
-                            required
-                            />
-                        </div>
-                        <div>
-                            <label class="form-label" for="carro-equipe">Equipe do carro:</label>
-                            <div class="form-group mb-3">
-                                <select class="form-select" #carroEquipe required> 
-                                    <option selected> Selecione a equipe</option>
-                                    <option *ngFor="let equipe of equipes" value="{{equipe.id}}" name="id_equipe">{{equipe.nome}}</option>
-                                </select>
-                            </div>
-                        </div>       
-                            <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
-                            <input type="submit" class="btn btn-success mx-2" (click)="save(carroDescricao.value, carroPlaca.value, carroEquipe.value); carroDescricao.value=''; carroPlaca.value=''; carroEquipe.value='';" value="Incluir ">            
-                        </div>
-                    </form>
-                </div>
+                    </div>       
+                    <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
+                    <input type="submit" class="btn btn-success mx-2" (click)="save(carroDescricao.value, carroPlaca.value, carroEquipe.value); carroDescricao.value=''; carroPlaca.value=''; carroEquipe.value='';" value="Incluir ">
+                </form>
             </div>
         </div>
-        
-        
-        
     </div>
+</div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { carroCorridaPiloto } from '../entities/carroCorridaPiloto';
+import { CarroCorridaPiloto } from '../entities/carroCorridaPiloto';
 
 @Injectable({
   providedIn: 'root'
@@ -17,19 +17,19 @@ export class CarroCorridaCarroCorridaPilotoService {
     return this.http.get<[]>(`${this.url}/listar`)
   }
 
-  incluir(novoCarroCorridaPiloto: carroCorridaPiloto): Observable<carroCorridaPiloto>
+  incluir(novoCarroCorridaPiloto: CarroCorridaPiloto): Observable<CarroCorridaPiloto>
   {
-    return this.http.post<carroCorridaPiloto>(`${this.url}/incluir`, novoCarroCorridaPiloto)
+    return this.http.post<CarroCorridaPiloto>(`${this.url}/incluir`, novoCarroCorridaPiloto)
   }
 
-  alterar(carroCorridaPiloto: carroCorridaPiloto): Observable<any>
+  alterar(carroCorridaPiloto: CarroCorridaPiloto): Observable<any>
   {
     return this.http.put<any>(`${this.url}/alterar`, carroCorridaPiloto)
   }
 
-  loadCarroCorridaPiloto(id: number): Observable<carroCorridaPiloto>
+  loadCarroCorridaPiloto(id: number): Observable<CarroCorridaPiloto>
   {
     const getUrl = `${this.url}/${id}`
-    return this.http.get<carroCorridaPiloto>(getUrl)
+    return this.http.get<CarroCorridaPiloto>(getUrl)
   }
 }

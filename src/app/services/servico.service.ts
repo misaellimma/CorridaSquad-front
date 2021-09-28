@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { servico } from '../entities/servico';
+import { Servico } from '../entities/servico';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +14,23 @@ export class ServicoService {
 
   listar()
   {
-    return this.http.get<servico[]>(`${this.url}/listar`)
+    return this.http.get<Servico[]>(`${this.url}/listar`)
   }
 
-  incluir(novoservico: servico): Observable<servico>
+  incluir(novoservico: Servico): Observable<Servico>
   {
-    return this.http.post<servico>(`${this.url}/incluir`, novoservico)
+    return this.http.post<Servico>(`${this.url}/incluir`, novoservico)
   }
 
-  alterar(servico: servico): Observable<any>
+  alterar(servico: Servico): Observable<any>
   {
     return this.http.put<any>(`${this.url}/alterar`, servico)
   }
 
-  loadservico(id: number): Observable<servico>
+  loadservico(id: number): Observable<Servico>
   {
     const getUrl = `${this.url}/${id}`
-    return this.http.get<servico>(getUrl)
+    return this.http.get<Servico>(getUrl)
   }
   
 }

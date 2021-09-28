@@ -10,8 +10,14 @@
     <div *ngIf="boolPostForm">
         <label for="nome">Nome do mecanico: </label>
         <input class="form form-control" id="nome" #nome required><br>
-        <label for="id_equipe">Id da equipe: </label>
-        <input class="form form-control" id="id_equipe" #idEquipe required=""><br><br>
+
+        <label class="form-label" for="ìd_equipe">Equipe do mecânico:</label>
+        <div class="form-group mb-3">
+            <select class="form-select" #idEquipe required> 
+                <option *ngFor="let equipe of equipes" value="{{equipe.id}}" name="id_equipe">{{equipe.nome}}</option>
+            </select>
+        </div>
+
         <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
         <input type="submit" class="btn btn-success" (click)="save(nome.value, idEquipe.value); nome.value=''; idEquipe.value='';" value="Incluir ">
     </div>

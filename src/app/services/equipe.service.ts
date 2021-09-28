@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { equipe } from '../entities/equipe';
+import { Equipe } from '../entities/equipe';
 
 @Injectable({
   providedIn: 'root'
@@ -14,22 +14,22 @@ export class EquipeService {
 
   listar()
   {
-    return this.http.get<equipe[]>(`${this.url}/listar`)
+    return this.http.get<Equipe[]>(`${this.url}/listar`)
   }
 
-  incluir(novoEquipe: equipe): Observable<equipe>
+  incluir(novoEquipe: Equipe): Observable<Equipe>
   {
-    return this.http.post<equipe>(`${this.url}/incluir`, novoEquipe)
+    return this.http.post<Equipe>(`${this.url}/incluir`, novoEquipe)
   }
 
-  alterar(equipe: equipe): Observable<any>
+  alterar(equipe: Equipe): Observable<any>
   {
     return this.http.put<any>(`${this.url}/alterar`, equipe)
   }
 
-  loadEquipe(id: number): Observable<equipe>
+  loadEquipe(id: number): Observable<Equipe>
   {
     const getUrl = `${this.url}/${id}`
-    return this.http.get<equipe>(getUrl)
+    return this.http.get<Equipe>(getUrl)
   }
 }

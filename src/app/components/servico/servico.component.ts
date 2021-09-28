@@ -42,12 +42,12 @@ export class ServicoComponent implements OnInit {
     this.boolPostForm = false
   }
 
-  save(descricao: string, id_mecanico: number, id_carro: number): void {
+  save(descricao: string, id_mecanico: string, id_carro:string): void {
     
     this.servico = {
       id: 0,
-      id_carro: id_carro,
-      id_mecanico: id_mecanico,
+      id_carro: Number(id_carro),
+      id_mecanico: Number(id_mecanico),
       descricao: descricao
     }
     this.servicoService.incluir(this.servico).subscribe(servico => {this.servicos.push(servico); this.listar()})

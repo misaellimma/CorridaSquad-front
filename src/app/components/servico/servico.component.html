@@ -21,10 +21,10 @@
             </select>
         </div>
 
-        <label class="form-label" for="ìd_carro">Id do carro:</label>
+        <label class="form-label" for="ìd_carro">Id do Carro:</label>
         <div class="form-group mb-3">
             <select class="form-select" #idCarro required> 
-                <option *ngFor="let carro of carros" value="{{carro.id}}" name="id_carro">{{carro.nome}}</option>
+                <option *ngFor="let carro of carros" value="{{carro.id}}" name="id_carro">{{carro.descricao}}</option>
             </select>
         </div>
 

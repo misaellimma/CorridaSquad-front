@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { carro } from 'src/app/entities/carro';
+import { equipe } from 'src/app/entities/equipe';
 import { CarroService } from 'src/app/services/carro.service';
+import { EquipeService } from 'src/app/services/equipe.service';
 
 @Component({
   selector: 'app-carro',
@@ -13,12 +15,21 @@ export class CarroComponent implements OnInit {
   boolPostForm: boolean = false
   carro: carro | undefined
   carros: carro[] = []
+  
+  equipes: equipe[] = []
 
-  constructor(private carroService: CarroService) { }
+  constructor(private carroService: CarroService, private equipeService: EquipeService) { }
 
   ngOnInit(): void {
     this.listar()
+
+    this.equipeService.listar().subscribe(
+      data => {this.equipes = data},
+      error => console.log("Erro ao listar modalidade: ", error)
+    )
   }
+
+
 
   showPostForm(){
     this.boolPostForm = true

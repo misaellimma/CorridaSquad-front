@@ -1,13 +1,44 @@
-<div class="container">
-    <h2>Alterar carro do id: {{carro.id}}</h2>
-    <form >
-        <label for="carro-descricao">Descricao do carro: </label>
-        <input name="descricao" class="form form-control" id="carro-descricao" [(ngModel)]="carro.descricao" required><br>
-        <label for="carro-placa">Numero do carro: </label>
-        <input name="numeracao" class="form form-control" id="carro-placa" [(ngModel)]="carro.numero" required=""><br>
-        <label for="carro-equipe">Equipe do carro: </label>
-        <input name="id_equipe" class="form form-control" id="carro-equipe" [(ngModel)]="carro.id_equipe" required><br><br>
-        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
-        <button class="btn btn-success" (click)="alterar()">Salvar</button>
-    </form>
-</div>
+<div class="container my-3">
+    <h1 class="text-center">Alterar carro do id: {{carro.id}}</h1>
+    <div class="card mt-3" style="width: 32rem; margin: auto; float: none;">
+        <div class="card-body register-form">
+            <form >
+                <div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="carro-descricao">Descricao do carro:</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="carro-descricao"
+                        placeholder="Ex. Marinho"
+                        [(ngModel)]="carro.descricao"
+                        required
+                        />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="carro-placa">Numero do carro:</label>
+                        <input
+                        type="number"
+                        class="form-control"
+                        id="carro-numero"
+                        [(ngModel)]="carro.numero"
+                        placeholder="Ex. Marinho"
+                        required
+                        />
+                    </div>
+                    <div>
+                        <label class="form-label" for="carro-equipe">Equipe do carro:</label>
+                        <div class="form-group mb-3">
+                            <select class="form-select" [(ngModel)]="carro.id_equipe" required> 
+                                <option selected> Selecione a equipe</option>
+                                <option *ngFor="let equipe of equipes" value="{{equipe.id}}" name="id_equipe">{{equipe.nome}}</option>
+                            </select>
+                        </div>
+                    </div>       
+                        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+                        <button class="btn btn-success" (click)="alterar()">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

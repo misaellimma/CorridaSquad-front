@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { carro } from 'src/app/entities/carro';
 import { CarroService } from 'src/app/services/carro.service';
 import { Location } from '@angular/common';
+import { EquipeService } from 'src/app/services/equipe.service';
+import { equipe } from 'src/app/entities/equipe';
 
 @Component({
   selector: 'app-carro-alterar',
@@ -21,11 +23,17 @@ export class CarroAlterarComponent implements OnInit {
   }
   @Input() id?:Number
 
-  constructor(private route: ActivatedRoute, private carroService: CarroService, private location: Location) { 
+  equipes: equipe[] = []
+
+  constructor(private route: ActivatedRoute, private carroService: CarroService, private location: Location, private equipeService: EquipeService) { 
   }
 
   ngOnInit(): void {
     this.loadCarro()
+
+    this.equipeService.listar().subscribe(
+      data => {this.equipes = data}
+    )
   }
 
   loadCarro(): void{

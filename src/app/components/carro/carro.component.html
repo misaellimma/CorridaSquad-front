@@ -7,17 +7,50 @@
     <button class="btn btn-success" (click)="showPostForm()">Incluir novo carro</button>
     
     
-    <div *ngIf="boolPostForm">
-        <label for="carro-descricao">Descricao do carro: </label>
-        <input class="form form-control" id="carro-descricao" #carroDescricao required><br>
-        <label for="carro-placa">Numero do carro: </label>
-        <input class="form form-control" id="carro-numero" #carroPlaca required=""><br>
-        <label for="carro-equipe">Equipe do carro: </label>
-        <input class="form form-control" id="carro-equipe" #carroEquipe required><br><br>
-        <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
-        <input type="submit" class="btn btn-success" (click)="save(carroDescricao.value, carroPlaca.value, carroEquipe.value); carroDescricao.value=''; carroPlaca.value=''; carroEquipe.value='';" value="Incluir ">
+    <div class="container my-3" *ngIf="boolPostForm">
+        <div class="card" style="width: 32rem; margin: auto; float: none;">
+            <div class="card-body register-form">
+                <form >
+                    <div>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="carro-descricao">Descricao do carro:</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="carro-descricao"
+                            placeholder="Ex. Marinho"
+                            #carroDescricao
+                            required
+                            />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="carro-placa">Numero do carro:</label>
+                            <input
+                            type="number"
+                            class="form-control"
+                            id="carro-numero"
+                            #carroPlaca
+                            placeholder="Ex. Marinho"
+                            required
+                            />
+                        </div>
+                        <div>
+                            <label class="form-label" for="carro-equipe">Equipe do carro:</label>
+                            <div class="form-group mb-3">
+                                <select class="form-select" #carroEquipe required> 
+                                    <option selected> Selecione a equipe</option>
+                                    <option *ngFor="let equipe of equipes" value="{{equipe.id}}" name="id_equipe">{{equipe.nome}}</option>
+                                </select>
+                            </div>
+                        </div>       
+                            <button class="btn btn-danger" (click)="hidePostForm()">Fechar sem salvar</button>
+                            <input type="submit" class="btn btn-success mx-2" (click)="save(carroDescricao.value, carroPlaca.value, carroEquipe.value); carroDescricao.value=''; carroPlaca.value=''; carroEquipe.value='';" value="Incluir ">            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
-</div>
-
-
-

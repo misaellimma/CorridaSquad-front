@@ -17,7 +17,7 @@ export class CorridaService {
   }
 
   getId(id:number): Observable<Corrida>{
-    return this.http.get(`${url}/listar/${id}`);
+    return this.http.get<Corrida>(`${url}/listar/${id}`);
   }
 
   create(data:any): Observable<any>{

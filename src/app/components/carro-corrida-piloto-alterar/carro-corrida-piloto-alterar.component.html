@@ -11,3 +11,36 @@
         <button class="btn btn-success" (click)="alterar()">Salvar</button>
     </form>
 </div>
+
+<h1 class="py-3 text-center">Atualizar CarroCorridaPiloto</h1>
+
+<div class="container my-3">
+    <div class="card" style="width: 32rem; margin: auto; float: none;">
+        <div class="card-body register-form">
+            <form >
+                <div>
+                    <label class="form-label" for="equipe">Carro participante:</label>
+                    <div class="form-group mb-3">
+                        <select name="carro" id="carro" class="form-select" [(ngModel)]="carroCorridaPiloto.id_carro" required> 
+                            <option *ngFor="let carro of carros" value="{{carro.id}}" selected name="id_carro">{{carro.descricao}}</option>
+                        </select>
+                    </div>       
+                    <label class="form-label" for="piloto">Piloto participante:</label>
+                    <div class="form-group mb-3">
+                        <select name="piloto" id="piloto" class="form-select" [(ngModel)]="carroCorridaPiloto.id_piloto" required> 
+                            <option *ngFor="let piloto of pilotos" value="{{piloto.id}}" selected name="id_piloto">{{piloto.nome}}</option>
+                        </select>
+                    </div>       
+                    <label class="form-label" for="corrida">Corrida:</label>
+                    <div class="form-group mb-3">
+                        <select name="corrida" id="corrida" class="form-select" [(ngModel)]="carroCorridaPiloto.id_corrida" required> 
+                            <option *ngFor="let corrida of corridas" value="{{corrida.id}}" selected name="id_corrida">{{corrida.descricao}}</option>
+                        </select>
+                    </div>                     
+                    <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
+                    <button class="btn btn-success mx-2" (click)="alterar()">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

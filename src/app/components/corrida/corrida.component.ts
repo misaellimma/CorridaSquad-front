@@ -19,7 +19,8 @@ export class CorridaComponent implements OnInit {
   form: FormGroup
 
   corrida: Corrida = {
-    descricao: ''
+    descricao: '',
+    id: 0
   }
   constructor(private formBuilder: FormBuilder,private corridaService: CorridaService) { 
     this.form = this.formBuilder.group(

@@ -27,12 +27,18 @@ export class EquipeAlterarComponent implements OnInit {
   loadEquipe(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'))
     this.equipe.id = id
+
+    this.equipeService.loadEquipe(id)
+      .subscribe(
+        data => this.equipe = data
+      )
   }
 
   alterar(): void
   {
     if(this.equipe){
-      this.equipeService.alterar(this.equipe).subscribe(resp => {this.goBack()})
+      this.equipeService.alterar(this.equipe).subscribe(resp => console.log(resp))
+      {this.goBack()}
     }
     
   }

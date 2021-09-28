@@ -24,6 +24,7 @@ export class EquipeService {
 
   alterar(equipe: Equipe): Observable<any>
   {
+    console.log(JSON.stringify(equipe))
     return this.http.put<any>(`${this.url}/alterar`, equipe)
   }
 

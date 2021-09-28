@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Piloto } from 'src/app/entities/piloto';
 import { PilotoService } from 'src/app/services/piloto.service';
+import { EquipeService } from 'src/app/services/equipe.service';
+import { Equipe } from 'src/app/entities/equipe';
 
 @Component({
   selector: 'app-piloto',
@@ -10,6 +12,7 @@ import { PilotoService } from 'src/app/services/piloto.service';
 export class PilotoComponent implements OnInit {
 
   boolPostForm: boolean = false
+  equipes: Equipe[] = []
 
   piloto: Piloto = {
     id: 0,
@@ -19,10 +22,11 @@ export class PilotoComponent implements OnInit {
 
   pilotos: Piloto[] = []
 
-  constructor(private pilotoService: PilotoService) { }
+  constructor(private pilotoService: PilotoService,private equipeService: EquipeService) { }
 
   ngOnInit(): void {
     this.listar()
+    this.equipeService.listar().subscribe(resp => this.equipes = resp)
   }
 
   showPostForm(): void{

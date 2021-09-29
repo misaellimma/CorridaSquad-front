@@ -32,6 +32,7 @@ import { ServicoService } from './services/servico.service';
 import { CorridaComponent } from './components/corrida/corrida.component';
 import { CorridaService } from './services/corrida.service';
 import { CorridaAlterarComponent } from './components/corrida-alterar/corrida-alterar.component';
+import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
 import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/view-corrida-equipe.component';
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/vie
     EquipeAlterarComponent,
     CarroCorridaPilotoComponent,
     CarroCorridaPilotoAlterarComponent,
-    ViewCorridaEquipeComponent
+    ViewCorridaEquipeComponent,
+    ViewMecanicoAuxComponent
   ],
   imports: [
     BrowserModule,

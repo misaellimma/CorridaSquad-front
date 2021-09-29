@@ -17,6 +17,7 @@ import { PilotoComponent } from './components/piloto/piloto.component';
 import { ServicoAlterarComponent } from './components/servico-alterar/servico-alterar.component';
 import { ServicoComponent } from './components/servico/servico.component';
 import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/view-corrida-equipe.component';
+import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
 import { CorridaService } from './services/corrida.service';
 
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: "carroCorridaPiloto/alterar/:id", component: CarroCorridaPilotoAlterarComponent},
   { path: "equipe", component: EquipeComponent},
   { path: "equipe/alterar/:id", component: EquipeAlterarComponent},
-  { path: "viewCorridaEquipe", component: ViewCorridaEquipeComponent}
+  { path: "viewCorridaEquipe", component: ViewCorridaEquipeComponent},
+  {path:"mecanico/auxiliares", component: ViewMecanicoAuxComponent}
 ];
 
 @NgModule({

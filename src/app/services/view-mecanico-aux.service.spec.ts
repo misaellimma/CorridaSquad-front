@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ViewMecanicoAuxService } from './view-mecanico-aux.service';
+import { ViewMecanicoAuxiliarService } from './view-mecanico-auxiliar.service';
 
 describe('ViewMecanicoAuxService', () => {
-  let service: ViewMecanicoAuxService;
+  let service: ViewMecanicoAuxiliarService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ViewMecanicoAuxService);
+    service = TestBed.inject(ViewMecanicoAuxiliarService);
   });
 
   it('should be created', () => {

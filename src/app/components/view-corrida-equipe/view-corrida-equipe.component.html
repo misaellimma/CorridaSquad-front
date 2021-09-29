@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Corrida</th>
+        <th scope="col">Equipe</th>
+        <th scope="col">Carro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let view of viewCorridaEquipes">
+        <th scope="row">{{ view.id }}</th>
+        <td>{{ view.corrida }}</td>
+        <td>{{ view.equipe }}</td>
+        <td>{{ view.carro }}</td>
+      </tr>
+    </tbody>
+  </table>

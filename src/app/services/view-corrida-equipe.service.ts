@@ -8,7 +8,7 @@ import { ViewCorridaEquipe } from '../entities/view-corrida-equipe';
 })
 export class ViewCorridaEquipeService {
 
-  url = "http://localhost:8080/view-corrida-equipe"
+  url = "http://localhost:8080/ViewCorridaEquipe"
 
   constructor(private http: HttpClient) { }
 

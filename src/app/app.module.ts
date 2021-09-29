@@ -34,7 +34,11 @@ import { CorridaService } from './services/corrida.service';
 import { CorridaAlterarComponent } from './components/corrida-alterar/corrida-alterar.component';
 import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
 import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/view-corrida-equipe.component';
+<<<<<<< HEAD
 import { ViewMecanicoAuxiliarComponent } from './components/view-mecanico-auxiliar/view-mecanico-auxiliar.component';
+=======
+import { ViewQuantidadeCarroCorridaComponent } from './components/view-quantidade-carro-corrida/view-quantidade-carro-corrida.component';
+>>>>>>> e91f53dad672193c3e73dd9b81720d54027f5b2c
 
 @NgModule({
   declarations: [
@@ -57,7 +61,11 @@ import { ViewMecanicoAuxiliarComponent } from './components/view-mecanico-auxili
     CarroCorridaPilotoAlterarComponent,
     ViewCorridaEquipeComponent,
     ViewMecanicoAuxComponent,
+<<<<<<< HEAD
     ViewMecanicoAuxiliarComponent
+=======
+    ViewQuantidadeCarroCorridaComponent
+>>>>>>> e91f53dad672193c3e73dd9b81720d54027f5b2c
   ],
   imports: [
     BrowserModule,

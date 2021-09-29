@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: "equipe", component: EquipeComponent},
   { path: "equipe/alterar/:id", component: EquipeAlterarComponent},
   { path: "viewCorridaEquipe", component: ViewCorridaEquipeComponent},
-  {path:"mecanico/auxiliares", component: ViewMecanicoAuxiliarComponent},
+  {path:"viewmecanicoauxiliar", component: ViewMecanicoAuxiliarComponent},
   {path:"quantidadeCarroCorrida", component: ViewQuantidadeCarroCorridaComponent}
 ];
 

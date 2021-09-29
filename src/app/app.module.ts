@@ -32,6 +32,7 @@ import { ServicoService } from './services/servico.service';
 import { CorridaComponent } from './components/corrida/corrida.component';
 import { CorridaService } from './services/corrida.service';
 import { CorridaAlterarComponent } from './components/corrida-alterar/corrida-alterar.component';
+import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CorridaAlterarComponent } from './components/corrida-alterar/corrida-al
     EquipeComponent,
     EquipeAlterarComponent,
     CarroCorridaPilotoComponent,
-    CarroCorridaPilotoAlterarComponent
+    CarroCorridaPilotoAlterarComponent,
+    ViewMecanicoAuxComponent
   ],
   imports: [
     BrowserModule,

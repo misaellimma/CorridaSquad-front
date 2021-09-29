@@ -18,6 +18,7 @@ import { ServicoAlterarComponent } from './components/servico-alterar/servico-al
 import { ServicoComponent } from './components/servico/servico.component';
 import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/view-corrida-equipe.component';
 import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
+import { ViewMecanicoAuxiliarComponent } from './components/view-mecanico-auxiliar/view-mecanico-auxiliar.component';
 import { ViewQuantidadeCarroCorridaComponent } from './components/view-quantidade-carro-corrida/view-quantidade-carro-corrida.component';
 import { CorridaService } from './services/corrida.service';
 
@@ -40,7 +41,7 @@ const routes: Routes = [
   { path: "equipe", component: EquipeComponent},
   { path: "equipe/alterar/:id", component: EquipeAlterarComponent},
   { path: "viewCorridaEquipe", component: ViewCorridaEquipeComponent},
-  {path:"mecanico/auxiliares", component: ViewMecanicoAuxComponent},
+  {path:"mecanico/auxiliares", component: ViewMecanicoAuxiliarComponent},
   {path:"quantidadeCarroCorrida", component: ViewQuantidadeCarroCorridaComponent}
 ];
 

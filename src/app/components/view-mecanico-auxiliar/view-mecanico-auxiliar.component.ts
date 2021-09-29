@@ -7,7 +7,7 @@ import { ViewMecanicoAuxService } from 'src/app/services/view-mecanico-aux.servi
   templateUrl: './view-mecanico-aux.component.html',
   styleUrls: ['./view-mecanico-aux.component.css']
 })
-export class ViewMecanicoAuxComponent implements OnInit {
+export class ViewMecanicoAuxiliarComponent implements OnInit {
   mecanicosAuxiliares:ViewMecanicoAuxiliar[] =[]
   constructor(private viewMecanicoAuxService : ViewMecanicoAuxService) { }
 

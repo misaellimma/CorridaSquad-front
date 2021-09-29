@@ -7,11 +7,11 @@ import { ViewMecanicoAuxiliar } from '../entities/viewMecanicoAuxiliar';
   providedIn: 'root'
 })
 export class ViewMecanicoAuxiliarService {
-  private url = "http://localhost:3000/mecanicoauxiliar"
+  private url = "http://localhost:8080/mecanicoauxiliar"
 
   constructor(private http : HttpClient) { }
 
   listar(): Observable<ViewMecanicoAuxiliar[]>{
-    return this.http.get<ViewMecanicoAuxiliar[]>(`${this.url}`)
+    return this.http.get<ViewMecanicoAuxiliar[]>(`${this.url}/listar`)
   }
 }

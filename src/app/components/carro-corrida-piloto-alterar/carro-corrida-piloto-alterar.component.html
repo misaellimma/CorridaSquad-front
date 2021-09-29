@@ -1,17 +1,3 @@
-<div class="container">
-    <h2>Alterar carroCorridaPiloto do id: {{carroCorridaPiloto.id}}</h2>
-    <form >
-        <label for="id_carro">Id do carro: </label>
-        <input name="id_carro" class="form form-control" id="id_carro" [(ngModel)]="carroCorridaPiloto.id_carro" required><br>
-        <label for="id_corrida">Id da corrida: </label>
-        <input name="id_corrida" class="form form-control" id="id_corrida" [(ngModel)]="carroCorridaPiloto.id_corrida" required=""><br>
-        <label for="id_piloto">Id do piloto: </label>
-        <input name="id_piloto" class="form form-control" id="id_piloto" [(ngModel)]="carroCorridaPiloto.id_piloto" required><br><br>
-        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button> 
-        <button class="btn btn-success" (click)="alterar()">Salvar</button>
-    </form>
-</div>
-
 <h1 class="py-3 text-center">Atualizar CarroCorridaPiloto</h1>
 
 <div class="container my-3">

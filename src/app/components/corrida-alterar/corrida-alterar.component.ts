@@ -26,7 +26,7 @@ export class CorridaAlterarComponent implements OnInit {
 
   loadCorrida(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.corrida.id = id
+    this.corridaService.loadCorrida(id).subscribe(resp => this.corrida = resp)
   }
 
   alterar(): void

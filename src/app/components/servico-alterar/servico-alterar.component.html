@@ -1,18 +1,3 @@
-<div class="container">
-    <h2>Alterar servico do id: {{servico.id}}</h2>
-    <form >
-        <label for="descricao">Descricao do servico: </label>
-        <input name="descricao" class="form form-control" id="descricao" [(ngModel)]="servico.descricao" required><br>
-        <label for="id_mecanico">Id do mecanico: </label>
-        <input name="id_mecanico" class="form form-control" id="id_mecanico" [(ngModel)]="servico.id_mecanico" required=""><br>
-        <label for="id_carro">Id do carro: </label>
-        <input name="id_carro" class="form form-control" id="id_carro" [(ngModel)]="servico.id_carro" required=""><br><br>
-        <button class="btn btn-danger" (click)="goBack()">Fechar sem salvar</button>
-        <button class="btn btn-success" (click)="alterar()">Salvar</button>
-    </form>
-</div>
-
-
 <h1 class="py-3 text-center">Atualizar serviço</h1>
 
 <div class="container my-3">
@@ -21,7 +6,7 @@
             <form >
                 <div>
                     <div class="form-group mb-3">
-                        <label class="form-label" for="descricao">{{servico.descricao}}</label>
+                        <label class="form-label" for="descricao">Descrição do serviço:</label>
                         <input
                         type="text"
                         class="form-control"

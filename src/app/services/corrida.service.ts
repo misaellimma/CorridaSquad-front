@@ -28,4 +28,10 @@ export class CorridaService {
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${url}/alterar/${id}`, data);
   }
+
+  loadCorrida(id: number): Observable<Corrida>
+  {
+    const getUrl = `${url}/${id}`
+    return this.http.get<Corrida>(getUrl)
+  }
 }

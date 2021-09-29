@@ -9,7 +9,7 @@
     <br>
     <button class="btn btn-success" (click)="showPostForm()">Incluir novo carro</button>
     <div class="container my-3" *ngIf="boolPostForm">
-        <div class="card" style="width: 32rem; margin: auto; float: none;">
+        <div class="card" style="width: 32rem;">
             <div class="card-body register-form">
                 <form>
                     <div class="form-group mb-3">
@@ -18,7 +18,7 @@
                         type="text"
                         class="form-control"
                         id="carro-descricao"
-                        placeholder="Ex. Marinho"
+                        placeholder="Ex. Camaro"
                         #carroDescricao
                         required
                         />
@@ -30,7 +30,7 @@
                         class="form-control"
                         id="carro-numero"
                         #carroPlaca
-                        placeholder="Ex. Marinho"
+                        placeholder="Ex. 22"
                         required
                         />
                     </div>

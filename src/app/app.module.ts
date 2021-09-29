@@ -32,7 +32,6 @@ import { ServicoService } from './services/servico.service';
 import { CorridaComponent } from './components/corrida/corrida.component';
 import { CorridaService } from './services/corrida.service';
 import { CorridaAlterarComponent } from './components/corrida-alterar/corrida-alterar.component';
-import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
 import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/view-corrida-equipe.component';
 import { ViewMecanicoAuxiliarComponent } from './components/view-mecanico-auxiliar/view-mecanico-auxiliar.component';
 import { ViewQuantidadeCarroCorridaComponent } from './components/view-quantidade-carro-corrida/view-quantidade-carro-corrida.component';
@@ -57,7 +56,6 @@ import { ViewQuantidadeCarroCorridaComponent } from './components/view-quantidad
     CarroCorridaPilotoComponent,
     CarroCorridaPilotoAlterarComponent,
     ViewCorridaEquipeComponent,
-    ViewMecanicoAuxComponent,
     ViewMecanicoAuxiliarComponent,
     ViewQuantidadeCarroCorridaComponent
   ],

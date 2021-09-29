@@ -17,7 +17,6 @@ import { PilotoComponent } from './components/piloto/piloto.component';
 import { ServicoAlterarComponent } from './components/servico-alterar/servico-alterar.component';
 import { ServicoComponent } from './components/servico/servico.component';
 import { ViewCorridaEquipeComponent } from './components/view-corrida-equipe/view-corrida-equipe.component';
-import { ViewMecanicoAuxComponent } from './components/view-mecanico-aux/view-mecanico-aux.component';
 import { ViewMecanicoAuxiliarComponent } from './components/view-mecanico-auxiliar/view-mecanico-auxiliar.component';
 import { ViewQuantidadeCarroCorridaComponent } from './components/view-quantidade-carro-corrida/view-quantidade-carro-corrida.component';
 import { CorridaService } from './services/corrida.service';

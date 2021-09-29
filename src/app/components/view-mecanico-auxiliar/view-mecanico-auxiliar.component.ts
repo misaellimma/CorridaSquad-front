@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewMecanicoAuxiliar } from 'src/app/entities/viewMecanicoAuxiliar';
-import { ViewMecanicoAuxService } from 'src/app/services/view-mecanico-aux.service';
+import { ViewMecanicoAuxiliarService } from 'src/app/services/view-mecanico-auxiliar.service';
 
 @Component({
   selector: 'app-view-mecanico-auxiliar',
@@ -9,7 +9,7 @@ import { ViewMecanicoAuxService } from 'src/app/services/view-mecanico-aux.servi
 })
 export class ViewMecanicoAuxiliarComponent implements OnInit {
   mecanicosAuxiliares:ViewMecanicoAuxiliar[] =[]
-  constructor(private viewMecanicoAuxService : ViewMecanicoAuxService) { }
+  constructor(private viewMecanicoAuxService : ViewMecanicoAuxiliarService) { }
 
   ngOnInit(): void {
     this.viewMecanicoAuxService.listar().subscribe(

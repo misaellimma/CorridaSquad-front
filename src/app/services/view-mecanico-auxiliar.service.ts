@@ -6,7 +6,7 @@ import { ViewMecanicoAuxiliar } from '../entities/viewMecanicoAuxiliar';
 @Injectable({
   providedIn: 'root'
 })
-export class ViewMecanicoAuxService {
+export class ViewMecanicoAuxiliarService {
   private url = "http://localhost:3000/mecanicoauxiliar"
 
   constructor(private http : HttpClient) { }

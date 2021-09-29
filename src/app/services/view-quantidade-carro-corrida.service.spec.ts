@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ViewQuantidadeCarroCorridaService } from '../services/view-quantidade-carro-corrida.service';
+import { ViewQuantidadeCarroCorridaService } from './view-quantidade-carro-corrida.service';
 
 describe('ViewQuantidadeCarroCorridaService', () => {
   let service: ViewQuantidadeCarroCorridaService;

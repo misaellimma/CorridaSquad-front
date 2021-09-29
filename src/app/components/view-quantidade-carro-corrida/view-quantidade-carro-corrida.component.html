@@ -1,1 +1,28 @@
-<p>view-quantidade-carro-corrida works!</p>
+<div class="container">
+    <div class="bg-dark text-light p-2">
+        <div class="row">
+            <div class="col-4 border-end">
+                Id
+            </div>
+            <div class="col-4  border-end">
+                Corrida
+            </div>
+            <div class="col-4"> 
+                Quantidade
+            </div>
+        </div>
+    </div>
+    <div class="p-2 border" *ngFor="let viewQuantidadeCarroCorrida of viewQuantidadeCarroCorridas">
+        <div class="row">
+            <div class="col-4 border-end">
+                {{viewQuantidadeCarroCorrida.id}}
+            </div>
+            <div class="col-4 border-end">
+                {{viewQuantidadeCarroCorrida.corrida}}
+            </div>
+            <div class="col-4 border-end"> 
+                {{viewQuantidadeCarroCorrida.quant_carro}}
+            </div>
+        </div>
+    </div>
+</div>

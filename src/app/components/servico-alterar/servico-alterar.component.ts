@@ -16,9 +16,7 @@ import { ServicoService } from 'src/app/services/servico.service';
 export class ServicoAlterarComponent implements OnInit {
 
   carros!: Carro[]
-  mecanicos!: Mecanico[]
 
-  mecanico!: Mecanico
   carro!: Carro
 
   servico: Servico = {
@@ -32,14 +30,12 @@ export class ServicoAlterarComponent implements OnInit {
     private route: ActivatedRoute, 
     private servicoService: ServicoService, 
     private location: Location,
-    private carroService: CarroService,
-    private mecanicoService: MecanicoService
+    private carroService: CarroService
     ) { }
 
   ngOnInit(): void {
     this.loadServico()
     this.carroService.listar().subscribe(resp => this.carros = resp)
-    this.mecanicoService.listar().subscribe(resp => this.mecanicos = resp)
   }
 
   loadServico(): void{

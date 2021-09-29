@@ -33,12 +33,11 @@ export class AuxiliarComponent implements OnInit {
     this.boolPostForm = false
   }
 
-  save(nome: string, idMecanico: string, idEquipe: string){
+  save(nome: string, idMecanico: string){
     this.auxiliar = {
       id: 0,
       nome: nome,
-      id_mecanico: Number(idMecanico),
-      id_equipe: Number(idEquipe)
+      id_mecanico: Number(idMecanico)
     }
     this.auxiliarService.incluir(this.auxiliar).subscribe(auxiliar => {this.auxiliars.push(auxiliar); this.listar()})
     

@@ -14,12 +14,6 @@
                         [(ngModel)]="servico.descricao"
                         placeholder="Ex. Marinho"
                         />
-                    </div>
-                    <label class="form-label" for="id_mecanico">Selecione um mecânico:</label>
-                    <div class="form-group mb-3">
-                        <select name="id_mecanico" id="id_mecanico" class="form-select" [(ngModel)]="servico.id_mecanico" required> 
-                            <option *ngFor="let mecanico of mecanicos" value="{{mecanico.id}}" selected name="id_mecanico">{{mecanico.nome}}</option>
-                        </select>
                     </div>  
                     <label class="form-label" for="id_carro">Selecione um carro:</label>
                     <div class="form-group mb-3">

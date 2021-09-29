@@ -18,16 +18,15 @@ export class AuxiliarAlterarComponent implements OnInit {
   auxiliar: Auxiliar = {
     id: 0,
     nome: '',
-    id_mecanico: 0,
-    id_equipe: 0
+    id_mecanico: 0
 
   }
-  equipes: Equipe[] =[];
+
   mecanicos: Mecanico[] =[]
   
   @Input() id?:Number
 
-  constructor(private route: ActivatedRoute, private auxiliarService: AuxiliarService, private location: Location, private mecanicoService : MecanicoService, private equipeService : EquipeService) { 
+  constructor(private route: ActivatedRoute, private auxiliarService: AuxiliarService, private location: Location, private mecanicoService : MecanicoService) { 
   }
 
   ngOnInit(): void {
@@ -41,9 +40,6 @@ export class AuxiliarAlterarComponent implements OnInit {
     )
     this.mecanicoService.listar().subscribe(
       resp => this.mecanicos = resp
-    )
-    this.equipeService.listar().subscribe(
-      resp => this.equipes = resp
     )
   }
 
